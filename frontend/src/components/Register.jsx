@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/register', { username, password });
+      const response = await axios.post('http://localhost:5000/api/auth/register', { username, password });
       setMessage(response.data.message);
       
       // Navigate to the login page after successful registration
