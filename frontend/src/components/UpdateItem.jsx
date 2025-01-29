@@ -17,7 +17,7 @@ const UpdateItem = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/items/${id}`);
+        const response = await axios.get(`http://localhost:5000/api/items/${id}`);
         setFormData(response.data);
       } catch (error) {
         setMessage('Failed to fetch item data.');
@@ -36,7 +36,7 @@ const UpdateItem = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`http://localhost:5000/items/${id}`, formData);
+      const response = await axios.put(`http://localhost:5000/api/items/${id}`, formData);
       setMessage('Item updated successfully');
       navigate('/items'); // Redirect to item list after update
     } catch (error) {
